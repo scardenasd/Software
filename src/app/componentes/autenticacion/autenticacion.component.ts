@@ -12,10 +12,9 @@ export class AutenticacionComponent implements OnInit {
 
   title = 'appangular';
 
-  nombre: string;
-  correo: string;
-  clavew = '123';
-
+  usuario: string;
+  contrasena: string;
+  
   mirespuesta: Respuesta;
 
   constructor(private servicio: OperacionesService, private router: Router) { }
@@ -25,31 +24,20 @@ export class AutenticacionComponent implements OnInit {
   llamar() {
 
 
-    if (this.nombre === undefined || this.correo === undefined){
+    if (this.usuario === undefined || this.contrasena === undefined){
       alert('Los datos estan vacios');
       return ;
     }
-    if(this.nombre.toUpperCase() === 'JULIAN'){
-      const  dato = {
-        "nombre": "Julian",
-        "correo": "Julian@correo",
-        "clave": "123",
-
-      }
-      this.servicio.usuario = dato;
-      this.router.navigate(['datos']);
-    }else{
-      alert ('No existe');
-    }
-    return ;
-    const x: Promise<Respuesta> =  this.servicio.autenticar(this.nombre, this.correo);
+    const x: Promise<Respuesta> =  this.servicio.autenticarK(this.usuario, this.contrasena);
 
     x.then((value: Respuesta) => {
       this.mirespuesta = value;
       if  (this.mirespuesta.codigo === 1){
-        alert ('- - - - - - -- - - - El usuario existe');
+        alert ('Sesión Iniciada');
+        this.router.navigate(['consulta']);
+       
       }else {
-        alert (' * * * * * * * * * *  *El usuario no existe');
+        alert ('Contraseña o usuario incorrectos');
       }
 
     });
@@ -59,6 +47,9 @@ export class AutenticacionComponent implements OnInit {
   otrollamdo(){
     this.servicio.version();
     this.mirespuesta.codigo;
+  }
+  salir(){
+    this.router.navigate([''])
   }
 }
 

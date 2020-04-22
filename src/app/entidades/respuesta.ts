@@ -1,5 +1,9 @@
 export interface Respuesta {
+    id: number;
+    nombre:String;
+    ciudad:String;
+    fecha:String;
+    mensajeE: String;
     codigo: number;
-    mensajeE: string;
-
+//mirar si hay error el mensajeE
 }

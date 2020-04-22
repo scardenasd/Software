@@ -1,0 +1,36 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<h1 align="center"><strong>Gestor De Torneo</strong></h1>
+
+<div class="wrapper fadeInDown">
+  <h2 align="center"><strong>Registro de equipos</strong></h2>
+  <div id="formContent">
+    
+    <!-- Tabs Titles -->
+    
+    <!-- Icon -->
+    
+    <p><strong>Seleccione una opción</strong>
+      
+    </p>
+    <!-- Login Form -->
+    <form (submit)="Registro()">
+      
+      <input type="text" id="NumeroEquipo" class="fadeIn second" name="No de equipo" placeholder="Ingrese número para el equipo" [(ngModel)]="numero_equipo">
+      <input type="text" id="NombreEquipo" class="fadeIn second" name="Nombre de equipo" placeholder="Nombre del equipo" [(ngModel)]="nombre_equipo">
+      <input type="text" id="CantidadJugadores" class="fadeIn second" name="Cantidad de jugadores" placeholder="Cantidad de jugadores" [(ngModel)]="cantidad_jugadores">
+      <input type="text" id="NombreDtecnico" class="fadeIn second" name="Nombre de tecnico" placeholder="Nombre de tecnico" [(ngModel)]="nombre_de_tecnico"> 
+      <input type="text" id="NumeroDefactura" class="fadeIn second" name="NumeroDefactura" placeholder="Numero De factura" [(ngModel)]="numero_de_factura">
+      <input type="text" id="DiaDeRegistro" class="fadeIn third" name="Fecha de inicio" placeholder="Fecha de registro" [(ngModel)]="dia_de_registro">
+      <input type="submit" class="fadeIn fourth" name="accion"  value="Registrar equipo">
+    </form>
+    <form> 
+      <button type="button" class="fadeIn fourth" (click)="admin()">Volver</button>
+    </form>
+      
+ 
+  </div>
+</div>

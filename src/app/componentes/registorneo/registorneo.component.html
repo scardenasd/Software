@@ -1,0 +1,36 @@
+<router-outlet></router-outlet>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<h1 align="center"><strong>GESTOR DE TORNEOS</strong></h1>
+
+
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    
+    <!-- Tabs Titles -->
+    
+    <!-- Icon -->
+    
+    <p><strong>Creación del torneo</strong>
+      
+    </p>
+    <!-- Login Form -->
+    <form (submit)="llamar()">
+      
+      <input type="text" id="id" class="fadeIn second" name="No de torneo" placeholder="No de torneo" [(ngModel)]="id">
+      <input type="text" id="nombre" class="fadeIn second" name="Nombre de torneo" placeholder="Nombre del torneo" [(ngModel)]="nombre">
+      <input type="text" id="ciudad" class="fadeIn second" name="Ciudad" placeholder="ciudad" [(ngModel)]="ciudad">
+      <input type="text" id="fecha" class="fadeIn third" name="Fecha de inicio" placeholder="Ingreso de fecha de inicio - DD/MM/AA" [(ngModel)]="fecha">
+      <input type="submit" class="fadeIn fourth" name="accion"  value="Registrar Torneo">
+      
+    </form>
+    <form> 
+      <button type="button" class="fadeIn fourth" (click)="admin()">Volver</button>
+    </form>
+ 
+  </div>
+ 
+</div>

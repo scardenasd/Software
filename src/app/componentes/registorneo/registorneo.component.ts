@@ -1,14 +1,16 @@
-import { Component } from '@angular/core';
-import { OperacionesService } from './servicios/operaciones.service';
-import { Respuesta } from './entidades/respuesta';
+import { Component, OnInit } from '@angular/core';
+import { Respuesta } from 'src/app/entidades/respuesta';
+import { OperacionesService } from 'src/app/servicios/operaciones.service';
+import {Router} from "@angular/router";
+import { ValueConverter } from '@angular/compiler/src/render3/view/template';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-registorneo',
+  templateUrl: './registorneo.component.html',
+  styleUrls: ['./registorneo.component.css']
 })
 
-export class AppComponent {
+export class RegistorneoComponent implements OnInit {
   [x: string]: any;
   title = 'PRUEBA';
   id: number;
@@ -18,12 +20,15 @@ export class AppComponent {
   mirespuesta: Respuesta;
 
 
+  ngOnInit(): void {
+  }
 
-
-  constructor(private servicio: OperacionesService) {
+  constructor(private servicio: OperacionesService,private router: Router) {
 
   }
-  
+  admin(){
+    this.router.navigate(['admin']);
+  }
 
   llamar() {
 
@@ -47,8 +52,13 @@ export class AppComponent {
       }
 
     });
-
+/*
+    Volver()
+    {
+        this.router.navigate(['vistadmin']);
+    }**/
+    }
 
     
   }
-}
+

@@ -1,18 +1,28 @@
-<div class="container col-lg-3">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<div class="wrapper fadeInDown">
+<div id="formContent">
+
   <form (submit)="llamar()">
     <div class="form-group text-center">
 
-      <p><strong>Bievenido</strong>
+      <p><strong>Ingrese su usuario</strong>
       </p>
     </div>
     <div class="form-group">
       <label>Nombre :</label>
-      <input class="form-control" type="text" name="nombre" placeholder="usuario" [(ngModel)]="nombre">
+      <input class="form-control" type="text" name="usuario" placeholder="usuario" [(ngModel)]="usuario">
     </div>
     <div class="form-group">
-      <label>Correo :</label>
-      <input class="form-control" type="text" name="correo" placeholder="correo" [(ngModel)]="correo">
+      <label>Contraseña :</label>
+      <input class="form-control" type="password" name="contraseña" placeholder="contraseña " [(ngModel)]="contrasena">
     </div>
-    <input type="submit" name="accion" value="Verificar"/>
+   <!--<input type="submit" name="accion" value="Ingresar"/>--> 
   </form>
+  <button type="button" class="fadeIn fourth" (click)="llamar()">Ingresar</button>
+  <button type="button" class="fadeIn fourth" (click)="salir()">Volver</button>
 </div>
+
+</div>
+

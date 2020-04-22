@@ -1,0 +1,45 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<h1 align="center"><strong>Gestor De Torneo- Tabla de torneos</strong></h1>
+
+<div class="wrapper fadeInDown">
+  <h2 align="center"><strong></strong></h2>
+  <div id="formContent">
+    
+    <!-- Tabs Titles -->
+    
+    <!-- Icon -->
+    
+    <p><strong>Lista de torneos</strong>
+      
+    </p>
+    <!-- Login Form -->
+    <p-table [value]="entradas">
+      <ng-template pTemplate="header">
+          <tr>
+              <th>Id</th>
+              <th>Nombre</th>
+              <th>Ciudad</th>
+              <th>Fecha</th>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-datos>
+          <tr>
+              <td>{{datos.id}}</td>
+              <td>{{datos.nombre}}</td>
+              <td>{{datos.ciudad}}</td>
+              <td>{{datos.fecha}}</td>
+          </tr>
+      </ng-template>
+    </p-table>
+
+    
+      
+ 
+  </div>
+  <form (submit)="admin()">
+    <input type="submit" class="fadeIn fourth" name="accion"  value="Volver">
+  </form>
+</div>
+

@@ -6,18 +6,28 @@
       </p>
     </div>
     <div class="form-group">
-      <label>Nombre :</label>
-      <input class="form-control" type="text" name="nombre" placeholder="usuario" [(ngModel)]="dato.nombre">
-    </div>
-  <div class="form-group">
-    <label>Correo :</label>
-    <input class="form-control" type="text" name="correo" placeholder="correo" [(ngModel)]="dato.correo">
-  </div>
-  <div class="form-group">
-    <label>Clave :</label>
-    <input class="form-control" type="text" name="clave" placeholder="clave" [(ngModel)]="dato.clave">
-  </div>
+      
   <button type="button" class="btn btn-primary" (click)="salir()">Salir</button>
 
-
+  <p-table >
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Ciudad</th>
+            <th>Fecha</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-datos>
+        <tr>
+            <td>{{datos.id}}</td>
+            <td>{{datos.nombre}}</td>
+            <td>{{datos.ciudad}}</td>
+            <td>{{datos.fecha}}</td>
+        </tr>
+    </ng-template>
+  </p-table>
+  
+  </div>
+  
 </div>

@@ -1,0 +1,28 @@
+<div class="form-group text-center">
+    <h3 class="first">Asignación de equipo a torneo</h3>
+
+        <p>De click en el botón buscar para saber que equipos hay para asignación.</p>
+        <button pButton type="button" class="ui-button-raised ui-button-rounded" label="Consultar datos torneo"></button>
+    
+    <div ng-app="myApp" ng-controller="customersCtrl">
+
+        <table>
+          <tr ng-repeat="x in names">
+            <td>Nombre del equipo</td>
+            <td>Director Técnico</td>
+            <td>Cantidad de jugadores</td>
+          </tr>
+        </table>
+        
+        </div>
+        
+        <script>
+        var app = angular.module('myApp', []);
+        app.controller('customersCtrl', function($scope, $http) {
+          $http.get("customers.php")
+          .then(function (response) {$scope.names = response.data.records;});
+        });
+        </script>
+
+
+        </div>

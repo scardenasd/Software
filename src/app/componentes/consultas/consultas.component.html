@@ -1,0 +1,31 @@
+<div class="container col-lg-3">
+    <link rel="stylesheet" type="text/css" href="/node_modules/primeicons/primeicons.css" />
+    <link rel="stylesheet" type="text/css" href="/node_modules/primeng/resources/themes/nova-light/theme.css" />
+    <link rel="stylesheet" type="text/css" href="/node_modules/primeng/resources/primeng.min.css" />
+  
+      <div class="form-group text-center">
+  
+        <p><strong>Pagina de consultas</strong></p>
+        <p>En esta página podrá consultar los datos respectivos al torneo.</p>
+        <p>De click en el siguiente botón para mostrar los datos.</p>
+        <p-button label="Consultar" (onClick)="cargarDatos()"></p-button>
+        <p></p>
+
+        <p-table [value]="torneos">
+          <ng-template pTemplate="header">
+              <tr>
+                  <th>Torneos</th>
+              </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-dato>
+            <tr>
+                <td>{{dato.nombre_tor}}</td>
+            </tr>
+        </ng-template>
+          
+      </p-table>
+
+
+      </div>
+
+  </div>
